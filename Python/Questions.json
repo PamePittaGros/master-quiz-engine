@@ -1,127 +1,105 @@
 [
-  {
-    "question": "What keyword defines a function in Python?",
-    "answer": ["def", "defines"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What data type is True or False?",
-    "answer": ["bool", "boolean"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What does print() do?",
-    "answer": ["display output", "shows output", "prints output"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What symbol is used for comments in Python?",
-    "answer": ["#"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What function gives the length of a list?",
-    "answer": ["len", "len()"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What data type is 5?",
-    "answer": ["int", "integer"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What data type is 3.14?",
-    "answer": ["float"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What keyword is used for loops?",
-    "answer": ["for", "while"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What keyword is used for conditions?",
-    "answer": ["if"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What is used to store multiple values in one variable?",
-    "answer": ["list"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What symbol is used for exponentiation?",
-    "answer": ["**"],
-    "difficulty": "medium"
-  },
-  {
-    "question": "What does == mean?",
-    "answer": ["equal", "is equal", "comparison"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What does != mean?",
-    "answer": ["not equal"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What keyword is used to return a value?",
-    "answer": ["return"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What structure uses key-value pairs?",
-    "answer": ["dictionary", "dict"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What is the index of the first item in a list?",
-    "answer": ["0", "zero"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What method adds an item to a list?",
-    "answer": ["append", "append()"],
-    "difficulty": "medium"
-  },
-  {
-    "question": "What keyword handles exceptions?",
-    "answer": ["try"],
-    "difficulty": "medium"
-  },
-  {
-    "question": "What keyword follows try for errors?",
-    "answer": ["except"],
-    "difficulty": "medium"
-  },
-  {
-    "question": "What does str() do?",
-    "answer": ["convert to string", "string conversion"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What does int() do?",
-    "answer": ["convert to integer", "integer conversion"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What loop runs while a condition is true?",
-    "answer": ["while"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What keyword stops a loop?",
-    "answer": ["break"],
-    "difficulty": "easy"
-  },
-  {
-    "question": "What keyword skips to next loop iteration?",
-    "answer": ["continue"],
-    "difficulty": "medium"
-  },
-  {
-    "question": "What does input() do?",
-    "answer": ["get user input", "takes input"],
-    "difficulty": "easy"
-  }
+  {"question":"What keyword defines a function?","answer":["def"],"difficulty":"easy","topic":"functions"},
+  {"question":"What keyword returns a value?","answer":["return"],"difficulty":"easy","topic":"functions"},
+  {"question":"What loop runs while a condition is true?","answer":["while"],"difficulty":"easy","topic":"loops"},
+  {"question":"What loop iterates over items?","answer":["for"],"difficulty":"easy","topic":"loops"},
+  {"question":"What symbol starts a comment?","answer":["#"],"difficulty":"easy","topic":"syntax"},
+  {"question":"What function gets user input?","answer":["input"],"difficulty":"easy","topic":"io"},
+  {"question":"What function prints output?","answer":["print"],"difficulty":"easy","topic":"io"},
+  {"question":"What data type is whole numbers?","answer":["int"],"difficulty":"easy","topic":"types"},
+  {"question":"What data type is text?","answer":["str"],"difficulty":"easy","topic":"types"},
+  {"question":"What does len() do?","answer":["returns length"],"difficulty":"easy","topic":"functions"},
+  {"question":"What keyword creates a class?","answer":["class"],"difficulty":"easy","topic":"oop"},
+  {"question":"What keyword handles errors?","answer":["try"],"difficulty":"easy","topic":"errors"},
+  {"question":"What keyword catches errors?","answer":["except"],"difficulty":"easy","topic":"errors"},
+  {"question":"What keyword runs always after try?","answer":["finally"],"difficulty":"easy","topic":"errors"},
+  {"question":"What keyword checks conditions?","answer":["if"],"difficulty":"easy","topic":"logic"},
+  {"question":"What keyword handles alternative conditions?","answer":["elif"],"difficulty":"easy","topic":"logic"},
+  {"question":"What keyword handles default condition?","answer":["else"],"difficulty":"easy","topic":"logic"},
+  {"question":"What operator checks equality?","answer":["=="],"difficulty":"easy","topic":"operators"},
+  {"question":"What operator assigns value?","answer":["="],"difficulty":"easy","topic":"operators"},
+  {"question":"What operator means not equal?","answer":["!="],"difficulty":"easy","topic":"operators"},
+  {"question":"What data structure uses key-value pairs?","answer":["dictionary","dict"],"difficulty":"easy","topic":"data"},
+  {"question":"What data structure is ordered and changeable?","answer":["list"],"difficulty":"easy","topic":"data"},
+  {"question":"What data structure is unordered and unique?","answer":["set"],"difficulty":"easy","topic":"data"},
+  {"question":"What data structure is ordered and immutable?","answer":["tuple"],"difficulty":"easy","topic":"data"},
+  {"question":"What method adds item to list?","answer":["append"],"difficulty":"easy","topic":"lists"},
+  {"question":"What method removes item from list?","answer":["remove"],"difficulty":"easy","topic":"lists"},
+  {"question":"What method sorts a list?","answer":["sort"],"difficulty":"easy","topic":"lists"},
+  {"question":"What keyword stops a loop?","answer":["break"],"difficulty":"easy","topic":"loops"},
+  {"question":"What keyword skips to next loop?","answer":["continue"],"difficulty":"easy","topic":"loops"},
+  {"question":"What keyword does nothing?","answer":["pass"],"difficulty":"easy","topic":"syntax"},
+
+  {"question":"What function converts to integer?","answer":["int"],"difficulty":"medium","topic":"types"},
+  {"question":"What function converts to string?","answer":["str"],"difficulty":"medium","topic":"types"},
+  {"question":"What function converts to float?","answer":["float"],"difficulty":"medium","topic":"types"},
+  {"question":"What function gets type of variable?","answer":["type"],"difficulty":"medium","topic":"types"},
+  {"question":"What keyword imports modules?","answer":["import"],"difficulty":"medium","topic":"modules"},
+  {"question":"What keyword imports specific part?","answer":["from"],"difficulty":"medium","topic":"modules"},
+  {"question":"What keyword gives alias to module?","answer":["as"],"difficulty":"medium","topic":"modules"},
+  {"question":"What function generates random number?","answer":["random"],"difficulty":"medium","topic":"modules"},
+  {"question":"What method joins strings?","answer":["join"],"difficulty":"medium","topic":"strings"},
+  {"question":"What method splits strings?","answer":["split"],"difficulty":"medium","topic":"strings"},
+  {"question":"What does strip() do?","answer":["removes whitespace"],"difficulty":"medium","topic":"strings"},
+  {"question":"What does lower() do?","answer":["lowercase string"],"difficulty":"medium","topic":"strings"},
+  {"question":"What does upper() do?","answer":["uppercase string"],"difficulty":"medium","topic":"strings"},
+  {"question":"What does replace() do?","answer":["replaces text"],"difficulty":"medium","topic":"strings"},
+  {"question":"What is a lambda?","answer":["anonymous function"],"difficulty":"medium","topic":"functions"},
+  {"question":"What is a parameter?","answer":["input variable"],"difficulty":"medium","topic":"functions"},
+  {"question":"What is an argument?","answer":["value passed"],"difficulty":"medium","topic":"functions"},
+  {"question":"What is recursion?","answer":["function calls itself"],"difficulty":"medium","topic":"functions"},
+  {"question":"What is list comprehension?","answer":["short loop syntax"],"difficulty":"medium","topic":"lists"},
+  {"question":"What is slicing?","answer":["get part of sequence"],"difficulty":"medium","topic":"lists"},
+  {"question":"What does enumerate() return?","answer":["index and value"],"difficulty":"medium","topic":"loops"},
+  {"question":"What does range() do?","answer":["generates numbers"],"difficulty":"medium","topic":"loops"},
+  {"question":"What is None?","answer":["no value"],"difficulty":"medium","topic":"types"},
+  {"question":"What is True?","answer":["boolean true"],"difficulty":"medium","topic":"types"},
+  {"question":"What is False?","answer":["boolean false"],"difficulty":"medium","topic":"types"},
+  {"question":"What is a module?","answer":["file with code"],"difficulty":"medium","topic":"modules"},
+  {"question":"What is a package?","answer":["folder of modules"],"difficulty":"medium","topic":"modules"},
+  {"question":"What does open() do?","answer":["opens file"],"difficulty":"medium","topic":"files"},
+  {"question":"What mode writes file?","answer":["w"],"difficulty":"medium","topic":"files"},
+  {"question":"What mode reads file?","answer":["r"],"difficulty":"medium","topic":"files"},
+  {"question":"What is exception?","answer":["runtime error"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is try block?","answer":["code to test"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is except block?","answer":["handles error"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is finally block?","answer":["always runs"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is raise?","answer":["throws error"],"difficulty":"medium","topic":"errors"},
+
+  {"question":"What is OOP?","answer":["object oriented programming"],"difficulty":"hard","topic":"oop"},
+  {"question":"What is a class?","answer":["blueprint"],"difficulty":"hard","topic":"oop"},
+  {"question":"What is an object?","answer":["instance"],"difficulty":"hard","topic":"oop"},
+  {"question":"What is inheritance?","answer":["reuse class"],"difficulty":"hard","topic":"oop"},
+  {"question":"What is encapsulation?","answer":["hide data"],"difficulty":"hard","topic":"oop"},
+  {"question":"What is polymorphism?","answer":["many forms"],"difficulty":"hard","topic":"oop"},
+  {"question":"What is __init__?","answer":["constructor"],"difficulty":"hard","topic":"oop"},
+  {"question":"What is self?","answer":["current object"],"difficulty":"hard","topic":"oop"},
+  {"question":"What is method?","answer":["function in class"],"difficulty":"hard","topic":"oop"},
+  {"question":"What is attribute?","answer":["variable in class"],"difficulty":"hard","topic":"oop"},
+
+  {"question":"What is decorator?","answer":["wrap function"],"difficulty":"hard","topic":"advanced"},
+  {"question":"What is generator?","answer":["yields values"],"difficulty":"hard","topic":"advanced"},
+  {"question":"What does yield do?","answer":["returns pause"],"difficulty":"hard","topic":"advanced"},
+  {"question":"What is iterator?","answer":["object with next"],"difficulty":"hard","topic":"advanced"},
+  {"question":"What is __str__?","answer":["string display"],"difficulty":"hard","topic":"advanced"},
+  {"question":"What is __repr__?","answer":["debug string"],"difficulty":"hard","topic":"advanced"},
+  {"question":"What is threading?","answer":["multiple tasks"],"difficulty":"hard","topic":"advanced"},
+  {"question":"What is async?","answer":["non blocking"],"difficulty":"hard","topic":"advanced"},
+  {"question":"What is pip?","answer":["package manager"],"difficulty":"hard","topic":"tools"},
+  {"question":"What is virtualenv?","answer":["isolated environment"],"difficulty":"hard","topic":"tools"},
+
+  {"question":"What is a f-string?","answer":["formatted string"],"difficulty":"medium","topic":"strings"},
+  {"question":"What does map() do?","answer":["applies function to iterable"],"difficulty":"medium","topic":"functions"},
+  {"question":"What does filter() do?","answer":["filters items"],"difficulty":"medium","topic":"functions"},
+  {"question":"What does zip() do?","answer":["combines iterables"],"difficulty":"medium","topic":"loops"},
+  {"question":"What is *args?","answer":["variable positional arguments"],"difficulty":"medium","topic":"functions"},
+  {"question":"What is **kwargs?","answer":["variable keyword arguments"],"difficulty":"medium","topic":"functions"},
+  {"question":"What is shallow copy?","answer":["copy references"],"difficulty":"medium","topic":"data"},
+  {"question":"What is deep copy?","answer":["copy nested objects"],"difficulty":"medium","topic":"data"},
+  {"question":"What does 'with' statement do?","answer":["handles context automatically"],"difficulty":"medium","topic":"files"},
+  {"question":"What is __name__?","answer":["module identifier"],"difficulty":"medium","topic":"advanced"},
+  {"question":"What is GIL?","answer":["global interpreter lock"],"difficulty":"hard","topic":"advanced"},
+  {"question":"What is set union?","answer":["combine sets"],"difficulty":"medium","topic":"data"},
+  {"question":"What is set intersection?","answer":["common elements"],"difficulty":"medium","topic":"data"},
+  {"question":"What does dict.get() do?","answer":["safe key access"],"difficulty":"medium","topic":"data"}
 ]

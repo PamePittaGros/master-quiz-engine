@@ -1,0 +1,72 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "answer": ["hyper text markup language"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  },
+  {
+    "question": "What tag is used for the largest heading?",
+    "answer": ["h1"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  },
+  {
+    "question": "What tag creates a paragraph?",
+    "answer": ["p"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  },
+  {
+    "question": "What tag creates a link?",
+    "answer": ["a"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  },
+  {
+    "question": "What attribute holds a link URL?",
+    "answer": ["href"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  },
+  {
+    "question": "What tag displays an image?",
+    "answer": ["img"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  },
+  {
+    "question": "What attribute describes an image?",
+    "answer": ["alt"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  },
+  {
+    "question": "What tag makes a line break?",
+    "answer": ["br"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  },
+  {
+    "question": "What tag creates a list item?",
+    "answer": ["li"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  },
+  {
+    "question": "What tag creates an unordered list?",
+    "answer": ["ul"],
+    "difficulty": "easy",
+    "topic": "html",
+    "language": "html"
+  }
+]

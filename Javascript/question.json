@@ -1,0 +1,66 @@
+[
+  {"question":"What keyword defines a class?","answer":["class"],"difficulty":"easy","topic":"syntax"},
+  {"question":"What method is entry point?","answer":["main"],"difficulty":"easy","topic":"syntax"},
+  {"question":"What keyword creates object?","answer":["new"],"difficulty":"easy","topic":"syntax"},
+  {"question":"What keyword inherits class?","answer":["extends"],"difficulty":"easy","topic":"oop"},
+  {"question":"What keyword implements interface?","answer":["implements"],"difficulty":"easy","topic":"oop"},
+  {"question":"What keyword makes method static?","answer":["static"],"difficulty":"easy","topic":"syntax"},
+  {"question":"What keyword prevents override?","answer":["final"],"difficulty":"easy","topic":"oop"},
+  {"question":"What keyword handles errors?","answer":["try"],"difficulty":"easy","topic":"errors"},
+  {"question":"What keyword catches errors?","answer":["catch"],"difficulty":"easy","topic":"errors"},
+  {"question":"What keyword always runs?","answer":["finally"],"difficulty":"easy","topic":"errors"},
+
+  {"question":"What keyword checks condition?","answer":["if"],"difficulty":"easy","topic":"logic"},
+  {"question":"What keyword loops items?","answer":["for"],"difficulty":"easy","topic":"loops"},
+  {"question":"What keyword loops conditionally?","answer":["while"],"difficulty":"easy","topic":"loops"},
+  {"question":"What keyword exits loop?","answer":["break"],"difficulty":"easy","topic":"loops"},
+  {"question":"What keyword skips iteration?","answer":["continue"],"difficulty":"easy","topic":"loops"},
+
+  {"question":"What is JVM?","answer":["java virtual machine"],"difficulty":"medium","topic":"runtime"},
+  {"question":"What is JDK?","answer":["java development kit"],"difficulty":"medium","topic":"runtime"},
+  {"question":"What is JRE?","answer":["java runtime environment"],"difficulty":"medium","topic":"runtime"},
+  {"question":"What is bytecode?","answer":["compiled java code"],"difficulty":"medium","topic":"runtime"},
+  {"question":"What is classpath?","answer":["class location"],"difficulty":"medium","topic":"runtime"},
+
+  {"question":"What is method overloading?","answer":["same name different params"],"difficulty":"medium","topic":"oop"},
+  {"question":"What is method overriding?","answer":["replace parent method"],"difficulty":"medium","topic":"oop"},
+  {"question":"What is encapsulation?","answer":["hide data"],"difficulty":"medium","topic":"oop"},
+  {"question":"What is abstraction?","answer":["hide implementation"],"difficulty":"medium","topic":"oop"},
+  {"question":"What is interface?","answer":["contract"],"difficulty":"medium","topic":"oop"},
+
+  {"question":"What is abstract class?","answer":["partial implementation"],"difficulty":"medium","topic":"oop"},
+  {"question":"What is constructor?","answer":["object initializer"],"difficulty":"medium","topic":"oop"},
+  {"question":"What is this keyword?","answer":["current object"],"difficulty":"medium","topic":"oop"},
+  {"question":"What is super keyword?","answer":["parent reference"],"difficulty":"medium","topic":"oop"},
+  {"question":"What is object?","answer":["instance"],"difficulty":"medium","topic":"oop"},
+
+  {"question":"What is exception?","answer":["runtime error"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is checked exception?","answer":["compile checked"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is unchecked exception?","answer":["runtime error"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is throw?","answer":["raise exception"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is throws?","answer":["declare exception"],"difficulty":"medium","topic":"errors"},
+
+  {"question":"What is ArrayList?","answer":["dynamic array"],"difficulty":"medium","topic":"collections"},
+  {"question":"What is HashMap?","answer":["key value store"],"difficulty":"medium","topic":"collections"},
+  {"question":"What is HashSet?","answer":["unique elements"],"difficulty":"medium","topic":"collections"},
+  {"question":"What is LinkedList?","answer":["linked nodes"],"difficulty":"medium","topic":"collections"},
+  {"question":"What is iterator?","answer":["loop object"],"difficulty":"medium","topic":"collections"},
+
+  {"question":"What is multithreading?","answer":["multiple threads"],"difficulty":"hard","topic":"concurrency"},
+  {"question":"What is synchronized?","answer":["thread safe"],"difficulty":"hard","topic":"concurrency"},
+  {"question":"What is volatile?","answer":["memory visibility"],"difficulty":"hard","topic":"concurrency"},
+  {"question":"What is thread?","answer":["execution unit"],"difficulty":"hard","topic":"concurrency"},
+  {"question":"What is runnable?","answer":["thread task"],"difficulty":"hard","topic":"concurrency"},
+
+  {"question":"What is lambda?","answer":["functional expression"],"difficulty":"hard","topic":"functional"},
+  {"question":"What is stream API?","answer":["data processing"],"difficulty":"hard","topic":"functional"},
+  {"question":"What is optional?","answer":["null wrapper"],"difficulty":"hard","topic":"functional"},
+  {"question":"What is functional interface?","answer":["single method"],"difficulty":"hard","topic":"functional"},
+  {"question":"What is method reference?","answer":["function pointer"],"difficulty":"hard","topic":"functional"},
+
+  {"question":"What is garbage collection?","answer":["memory cleanup"],"difficulty":"hard","topic":"memory"},
+  {"question":"What is heap?","answer":["object memory"],"difficulty":"hard","topic":"memory"},
+  {"question":"What is stack?","answer":["method memory"],"difficulty":"hard","topic":"memory"},
+  {"question":"What is memory leak?","answer":["unreleased memory"],"difficulty":"hard","topic":"memory"},
+  {"question":"What is GC root?","answer":["reachable objects"],"difficulty":"hard","topic":"memory"}
+]

@@ -1,0 +1,49 @@
+[
+  {"question":"What symbol starts preprocessor?","answer":["#"],"difficulty":"easy","topic":"syntax"},
+  {"question":"What function prints output?","answer":["printf"],"difficulty":"easy","topic":"io"},
+  {"question":"What function reads input?","answer":["scanf"],"difficulty":"easy","topic":"io"},
+  {"question":"What keyword defines constant?","answer":["const"],"difficulty":"easy","topic":"syntax"},
+  {"question":"What keyword defines structure?","answer":["struct"],"difficulty":"easy","topic":"data"},
+
+  {"question":"What keyword loops?","answer":["for"],"difficulty":"easy","topic":"loops"},
+  {"question":"What keyword checks condition?","answer":["if"],"difficulty":"easy","topic":"logic"},
+  {"question":"What keyword exits function?","answer":["return"],"difficulty":"easy","topic":"functions"},
+  {"question":"What operator gets address?","answer":["&"],"difficulty":"easy","topic":"pointers"},
+  {"question":"What operator dereferences pointer?","answer":["*"],"difficulty":"easy","topic":"pointers"},
+
+  {"question":"What is pointer?","answer":["memory address"],"difficulty":"medium","topic":"pointers"},
+  {"question":"What is null pointer?","answer":["points to nothing"],"difficulty":"medium","topic":"pointers"},
+  {"question":"What is dangling pointer?","answer":["freed memory"],"difficulty":"medium","topic":"pointers"},
+  {"question":"What is pointer arithmetic?","answer":["memory offset"],"difficulty":"medium","topic":"pointers"},
+  {"question":"What is double pointer?","answer":["pointer to pointer"],"difficulty":"medium","topic":"pointers"},
+
+  {"question":"What is malloc?","answer":["allocate memory"],"difficulty":"medium","topic":"memory"},
+  {"question":"What is calloc?","answer":["allocate zeroed"],"difficulty":"medium","topic":"memory"},
+  {"question":"What is realloc?","answer":["resize memory"],"difficulty":"medium","topic":"memory"},
+  {"question":"What is free?","answer":["deallocate memory"],"difficulty":"medium","topic":"memory"},
+  {"question":"What is memory leak?","answer":["unreleased memory"],"difficulty":"medium","topic":"memory"},
+
+  {"question":"What is stack memory?","answer":["function memory"],"difficulty":"medium","topic":"memory"},
+  {"question":"What is heap memory?","answer":["dynamic memory"],"difficulty":"medium","topic":"memory"},
+  {"question":"What is segmentation fault?","answer":["invalid access"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is buffer overflow?","answer":["memory overwrite"],"difficulty":"medium","topic":"errors"},
+  {"question":"What is undefined behavior?","answer":["unpredictable"],"difficulty":"medium","topic":"errors"},
+
+  {"question":"What is array?","answer":["fixed sequence"],"difficulty":"medium","topic":"data"},
+  {"question":"What is string in C?","answer":["char array"],"difficulty":"medium","topic":"data"},
+  {"question":"What is struct?","answer":["group variables"],"difficulty":"medium","topic":"data"},
+  {"question":"What is union?","answer":["shared memory"],"difficulty":"medium","topic":"data"},
+  {"question":"What is enum?","answer":["named constants"],"difficulty":"medium","topic":"data"},
+
+  {"question":"What is header file?","answer":["declarations"],"difficulty":"medium","topic":"files"},
+  {"question":"What is include?","answer":["import header"],"difficulty":"medium","topic":"files"},
+  {"question":"What is macro?","answer":["text substitution"],"difficulty":"medium","topic":"preprocessor"},
+  {"question":"What is define?","answer":["macro define"],"difficulty":"medium","topic":"preprocessor"},
+  {"question":"What is ifdef?","answer":["conditional compile"],"difficulty":"medium","topic":"preprocessor"},
+
+  {"question":"What is compilation?","answer":["code to binary"],"difficulty":"hard","topic":"build"},
+  {"question":"What is linking?","answer":["combine objects"],"difficulty":"hard","topic":"build"},
+  {"question":"What is object file?","answer":["compiled file"],"difficulty":"hard","topic":"build"},
+  {"question":"What is static linking?","answer":["embed libraries"],"difficulty":"hard","topic":"build"},
+  {"question":"What is dynamic linking?","answer":["shared libraries"],"difficulty":"hard","topic":"build"}
+]
