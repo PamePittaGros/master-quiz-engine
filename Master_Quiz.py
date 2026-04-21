@@ -6,11 +6,46 @@ from pathlib import Path
 # -------------------------
 # 📁 BASE DIRECTORY
 # -------------------------
+
 BASE_DIR = Path(__file__).parent
+
+# -------------------------
+# 🧠 NORMALIZE ANSWERS
+# -------------------------
+
+def normalize(text):
+    text = text.lower().strip()
+
+    # 🔢 word → number
+    word_to_number = {
+        "zero": "0",
+        "one": "1",
+        "two": "2",
+        "three": "3",
+        "four": "4",
+        "five": "5",
+        "six": "6",
+        "seven": "7"
+    }
+
+    # 🔁 synonyms
+    synonyms = {
+        "boolean": "bool",
+        "integer": "int"
+    }
+
+    if text in word_to_number:
+        text = word_to_number[text]
+
+    if text in synonyms:
+        text = synonyms[text]
+
+    return text
 
 # -------------------------
 # 📦 LOAD QUESTIONS
 # -------------------------
+
 def load_questions(file_path):
     try:
         with open(file_path, "r", encoding="utf-8") as file:
@@ -19,18 +54,20 @@ def load_questions(file_path):
         print(f"❌ File not found: {file_path}")
         return []
     except json.JSONDecodeError as e:
-        print(f"❌ JSON error: {e}")
+        print(f"❌ JSON error in {file_path}: {e}")
         return []
 
 # -------------------------
 # 📁 GET TOPIC PATH
 # -------------------------
+
 def get_topic_path(topic):
     return BASE_DIR / topic / "questions.json"
 
 # -------------------------
 # 🎯 FILTER QUESTIONS
 # -------------------------
+
 def filter_questions(questions, difficulty):
     if difficulty == "all":
         return questions
@@ -39,28 +76,39 @@ def filter_questions(questions, difficulty):
 # -------------------------
 # 🎲 SELECT QUESTIONS
 # -------------------------
+
 def select_questions(questions, amount):
     return random.sample(questions, min(amount, len(questions)))
 
 # -------------------------
 # 🎮 NORMAL QUIZ
 # -------------------------
+
 def run_quiz(questions):
     score = 0
+    streak = 0
     wrong = []
     weak_topics = {}
 
     for i, q in enumerate(questions, 1):
-        print(f"\nQ{i}: {q['question']}")
-        user = input("Your answer: ").strip().lower()
+        print(f"\n📘 Q{i}/{len(questions)}: {q['question']}")
+        user = input("Your answer: ")
 
-        answers = [a.lower() for a in q.get("answer", [])]
+        user = normalize(user)
+        answers = [normalize(a) for a in q.get("answer", [])]
 
         if user in answers:
             print("✅ Correct")
             score += 1
+            streak += 1
+            print(f"🔥 Streak: {streak}")
         else:
-            print(f"❌ Wrong (Correct: {', '.join(q['answer'])})")
+            print(f"❌ Wrong (Accepted: {', '.join(q.get('answer', []))})")
+
+            print("💡 Type the correct answer once before continuing:")
+            input("> ")
+
+            streak = 0
             wrong.append(q)
 
             topic = q.get("topic", "unknown")
@@ -69,13 +117,16 @@ def run_quiz(questions):
     return score, wrong, weak_topics
 
 # -------------------------
-# 🎯 MCQ QUIZ
+# 🎯 MULTIPLE CHOICE QUIZ
 # -------------------------
+
 def run_mcq(questions):
     if len(questions) < 2:
+        print("⚠️ Not enough questions. Switching to normal.")
         return run_quiz(questions)
 
     score = 0
+    streak = 0
     wrong = []
     weak_topics = {}
 
@@ -94,23 +145,33 @@ def run_mcq(questions):
         options = [correct] + distractors
         random.shuffle(options)
 
-        print(f"\nQ{i}: {q['question']}")
+        print(f"\n📘 Q{i}/{len(questions)}: {q['question']}")
         for idx, opt in enumerate(options, 1):
             print(f"{idx}. {opt}")
 
         try:
             choice = int(input("Choose: "))
+            if not 1 <= choice <= len(options):
+                raise ValueError
             user_answer = options[choice - 1]
         except:
             print("❌ Invalid input")
             wrong.append(q)
+            streak = 0
             continue
 
-        if user_answer.lower() == correct.lower():
+        # 🔥 normalize here too
+        if normalize(user_answer) == normalize(correct):
             print("✅ Correct")
             score += 1
+            streak += 1
+            print(f"🔥 Streak: {streak}")
         else:
             print(f"❌ Wrong (Correct: {correct})")
+            print("💡 Say the correct answer out loud before continuing.")
+            input("> ")
+
+            streak = 0
             wrong.append(q)
 
             topic = q.get("topic", "unknown")
@@ -121,97 +182,127 @@ def run_mcq(questions):
 # -------------------------
 # 📄 SAVE REPORT
 # -------------------------
-def save_report(score, total, topic):
-    folder = BASE_DIR / "reports"
-    folder.mkdir(exist_ok=True)
 
-    file_name = folder / "results.txt"
+def save_report(score, total, wrong, topic, difficulty, mode, weak_topics):
+    folder = BASE_DIR / "reports" / topic / difficulty
+    folder.mkdir(parents=True, exist_ok=True)
 
-    with open(file_name, "a", encoding="utf-8") as f:
-        f.write(f"{datetime.datetime.now()} | {topic} | {score}/{total}\n")
+    percentage = (score / total) * 100 if total else 0
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
-# -------------------------
-# 📊 SAVE PROGRESS
-# -------------------------
-def save_progress(topic, score, total):
-    file = BASE_DIR / "progress.json"
+    file_name = folder / f"{mode}_{timestamp}.txt"
 
-    data = {"sessions": []}
-    if file.exists():
-        with open(file, "r") as f:
-            data = json.load(f)
+    with open(file_name, "w", encoding="utf-8") as f:
+        f.write(f"Score: {score}/{total}\n")
+        f.write(f"Accuracy: {percentage:.2f}%\n\n")
 
-    data["sessions"].append({
-        "date": str(datetime.datetime.now()),
-        "topic": topic,
-        "score": score,
-        "total": total
-    })
+        if wrong:
+            f.write("Wrong Answers:\n")
+            for w in wrong:
+                f.write(f"- {w['question']} → {', '.join(w.get('answer', []))}\n")
 
-    with open(file, "w") as f:
-        json.dump(data, f, indent=4)
+        if weak_topics:
+            f.write("\nWeak Topics:\n")
+            for t, c in sorted(weak_topics.items(), key=lambda x: -x[1]):
+                f.write(f"{t}: {c}\n")
+
+    print(f"📄 Saved: {file_name}")
 
 # -------------------------
-# 📊 SHOW PROGRESS
+# 🧠 RETRY SYSTEM
 # -------------------------
-def show_progress():
-    file = BASE_DIR / "progress.json"
 
-    if not file.exists():
-        print("No progress yet")
+def retry_wrong_questions(wrong):
+    if not wrong:
         return
 
-    with open(file, "r") as f:
-        data = json.load(f)
+    retry = input("\n🔁 Retry wrong questions? (y/n): ").lower()
+    if retry == "y":
+        print("\n🔁 RETRY MODE\n")
+        run_quiz(wrong)
 
-    print("\n📊 Last sessions:")
-    for s in data["sessions"][-5:]:
-        print(s)
+# -------------------------
+# 🧠 PRACTICE WEAK TOPICS
+# -------------------------
+
+def practice_weak_topics(all_questions, weak_topics):
+    if not weak_topics:
+        return
+
+    retry = input("\n🧠 Practice weak topics? (y/n): ").lower()
+    if retry != "y":
+        return
+
+    weak_list = [q for q in all_questions if q.get("topic") in weak_topics]
+
+    if not weak_list:
+        return
+
+    print("\n🧠 FOCUS TRAINING MODE\n")
+    run_quiz(select_questions(weak_list, min(10, len(weak_list))))
 
 # -------------------------
 # 🚀 MAIN
 # -------------------------
-def main():
-    print("🎮 QUIZ ENGINE")
 
-    topics = [d.name for d in BASE_DIR.iterdir() if d.is_dir()]
-    print("Topics:", topics)
+def main():
+    print("🎮 MASTER QUIZ ENGINE\n")
+
+    topics = [d.name for d in BASE_DIR.iterdir()
+              if d.is_dir() and (d / "questions.json").exists()]
+
+    print("Available topics:")
+    for t in topics:
+        print("-", t)
 
     while True:
-        topic = input("Choose topic: ")
+        topic = input("\nChoose topic: ").strip()
         if topic in topics:
             break
-        print("Invalid topic")
+        print("❌ Invalid topic.")
 
-    difficulty = input("Difficulty (easy/medium/hard/all): ").lower()
+    difficulty = input("Difficulty (easy / medium / hard / all): ").strip().lower()
 
+    allowed_sizes = [10, 25, 50, 100]
     while True:
         try:
-            size = int(input("Size (10/25/50/100): "))
-            if size in [10, 25, 50, 100]:
+            size = int(input("Test size (10 / 25 / 50 / 100): "))
+            if size in allowed_sizes:
                 break
-        except:
-            pass
-        print("Invalid size")
+            print("❌ Choose 10, 25, 50, or 100.")
+        except ValueError:
+            print("❌ Enter a number.")
 
-    mode = input("Mode (1=normal,2=mcq): ")
+    mode_input = input("Mode (1 = normal / 2 = MCQ): ")
+    mode, run_func = ("mcq", run_mcq) if mode_input == "2" else ("normal", run_quiz)
 
-    questions = load_questions(get_topic_path(topic))
+    path = get_topic_path(topic)
+    questions = load_questions(path)
+
+    if not questions:
+        print("❌ No questions found.")
+        return
+
     filtered = filter_questions(questions, difficulty)
     test = select_questions(filtered, size)
 
-    if mode == "2":
-        score, wrong, weak = run_mcq(test)
-    else:
-        score, wrong, weak = run_quiz(test)
+    if not test:
+        print("❌ No matching questions.")
+        return
+
+    score, wrong, weak_topics = run_func(test)
 
     total = len(test)
+    percentage = (score / total) * 100
 
-    print(f"\nScore: {score}/{total}")
+    print(f"\n🏆 Score: {score}/{total}")
+    print(f"✅ Accuracy: {percentage:.1f}%")
 
-    save_report(score, total, topic)
-    save_progress(topic, score, total)
-    show_progress()
+    retry_wrong_questions(wrong)
+    practice_weak_topics(questions, weak_topics)
+
+    save_report(score, total, wrong, topic, difficulty, mode, weak_topics)
+
 
 if __name__ == "__main__":
     main()
