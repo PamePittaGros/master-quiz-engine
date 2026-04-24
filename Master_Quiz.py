@@ -96,7 +96,6 @@ def run_quiz(questions):
         else:
             print(f"❌ Wrong (Accepted: {', '.join(q.get('answer', []))})")
 
-            # 🔥 FORCE CORRECT ANSWER
             print("💡 Type the correct answer to continue:")
             while True:
                 retry_input = normalize(input("> "))
@@ -110,7 +109,6 @@ def run_quiz(questions):
             topic = q.get("topic", "unknown")
             weak_topics[topic] = weak_topics.get(topic, 0) + 1
 
-            # 🔁 OPTIONAL: repeat later
             questions.append(q)
 
         i += 1
@@ -214,53 +212,22 @@ def save_report(score, total, wrong, topic, difficulty, mode, weak_topics):
     print(f"📄 Saved: {file_name}")
 
 # -------------------------
-# 🧠 RETRY WRONG
-# -------------------------
-
-def retry_wrong_questions(wrong):
-    if not wrong:
-        return
-
-    retry = input("\n🔁 Retry wrong questions? (y/n): ").lower()
-    if retry == "y":
-        print("\n🔁 RETRY MODE\n")
-        run_quiz(wrong)
-
-# -------------------------
-# 🧠 PRACTICE WEAK TOPICS
-# -------------------------
-
-def practice_weak_topics(all_questions, weak_topics):
-    if not weak_topics:
-        return
-
-    retry = input("\n🧠 Practice weak topics? (y/n): ").lower()
-    if retry != "y":
-        return
-
-    weak_list = [q for q in all_questions if q.get("topic") in weak_topics]
-
-    if not weak_list:
-        return
-
-    print("\n🧠 FOCUS TRAINING MODE\n")
-    run_quiz(select_questions(weak_list, min(10, len(weak_list))))
-
-# -------------------------
 # 🚀 MAIN
 # -------------------------
 
 def main():
     print("🎮 MASTER QUIZ ENGINE\n")
 
-    topics = [d.name for d in BASE_DIR.iterdir()
-              if d.is_dir() and (d / "questions.json").exists()]
+    # ✅ SORTED TOPICS (NEW)
+    topics = sorted(
+        [d.name for d in BASE_DIR.iterdir()
+         if d.is_dir() and (d / "questions.json").exists()]
+    )
 
     print("Available topics:")
     for t in topics:
         print("-", t)
 
-    # ✅ case-safe topic selection
     topic_map = {t.lower(): t for t in topics}
 
     while True:
@@ -306,9 +273,6 @@ def main():
 
     print(f"\n🏆 Score: {score}/{total}")
     print(f"✅ Accuracy: {percentage:.1f}%")
-
-    retry_wrong_questions(wrong)
-    practice_weak_topics(questions, weak_topics)
 
     save_report(score, total, wrong, topic, difficulty, mode, weak_topics)
 

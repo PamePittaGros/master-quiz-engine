@@ -1,0 +1,16 @@
+Score: 4/10
+Accuracy: 40.00%
+
+Wrong Answers:
+- What function reads input? → scanf
+- What operator gets address? → &
+- What keyword exits function? → return
+- What function prints output? → printf
+- What operator dereferences pointer? → *
+- What symbol starts preprocessor? → #
+
+Weak Topics:
+io: 2
+pointers: 2
+functions: 1
+syntax: 1
