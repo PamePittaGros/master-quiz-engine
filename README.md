@@ -6,26 +6,43 @@ A modular quiz engine built in Python that reinforces learning through active re
 Originally developed as a terminal-based quiz, this project evolved into a more structured system focused on learning effectiveness and scalability.
 
 🚀 Key Features
+
 Topic-based question system using JSON datasets
+
 Difficulty filtering (easy / medium / hard / all)
+
 Randomized, non-repeating question selection
+
 Support for multiple correct answers
+
 Input normalization (e.g., "4" vs "four")
+
 Performance tracking with saved session reports
+
 Organized result storage by topic and difficulty
+
 Cross-platform (Windows, Mac, Linux)
+
 🧠 Learning-Focused Design
 
 This project emphasizes:
 
 Active recall over passive review
+
 Immediate feedback for reinforcement
+
 Identifying weak areas through incorrect answers
+
 🛠 Tech Stack
+
 Python
+
 JSON (question storage)
+
 File I/O (result tracking)
+
 CLI (command-line interface)
+
 📁 Project Structure
 master-quiz-engine/
 │
@@ -38,13 +55,21 @@ master-quiz-engine/
 │     └── questions.json
 └── Master test results/    # Saved quiz results
 ⚙️ How It Works
+
 User selects a topic
+
 User selects difficulty
+
 User selects number of questions
+
 Questions are randomly selected (no repeats)
+
 Answers are validated against accepted formats
+
 Score is calculated
+
 Results are saved to a file
+
 ▶️ Getting Started
 1. Install Python (3.10+ recommended)
 2. Navigate to project folder
@@ -76,18 +101,31 @@ Master test results/
 Each report includes:
 
 Score
+
 Incorrect answers
+
 Timestamp
+
 🔭 Future Improvements
+
 Web-based interface (Flask or FastAPI)
+
 Progress visualization (charts, analytics)
+
 Adaptive difficulty system
+
 User profiles and persistent tracking
+
 💼 What This Project Demonstrates
+
 Writing modular, maintainable Python code
+
 Structuring scalable projects across multiple datasets
+
 Handling edge cases and input validation
+
 Designing systems with user learning in mind
+
 👨‍💻 Author
 
 Taylor
