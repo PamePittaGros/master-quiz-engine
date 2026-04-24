@@ -1,97 +1,94 @@
-📘 Master Quiz Engine
+📚 Adaptive Quiz Engine (Python)
+Overview
 
-A simple, portable quiz system built with Python.
-It loads questions from JSON files and runs interactive quizzes in the terminal.
+A modular quiz engine built in Python that reinforces learning through active recall, feedback, and targeted practice.
 
-🚀 Features
-Multiple topics (Python, Java, HTML, etc.)
-Difficulty system (easy / medium / hard / all)
-Random question selection
-No repeated questions in one test
-Supports multiple answers per question
-Saves test results to a text file
-Works on Windows, Mac, Linux (portable)
+Originally developed as a terminal-based quiz, this project evolved into a more structured system focused on learning effectiveness and scalability.
+
+🚀 Key Features
+Topic-based question system using JSON datasets
+Difficulty filtering (easy / medium / hard / all)
+Randomized, non-repeating question selection
+Support for multiple correct answers
+Input normalization (e.g., "4" vs "four")
+Performance tracking with saved session reports
+Organized result storage by topic and difficulty
+Cross-platform (Windows, Mac, Linux)
+🧠 Learning-Focused Design
+
+This project emphasizes:
+
+Active recall over passive review
+Immediate feedback for reinforcement
+Identifying weak areas through incorrect answers
+🛠 Tech Stack
+Python
+JSON (question storage)
+File I/O (result tracking)
+CLI (command-line interface)
 📁 Project Structure
 master-quiz-engine/
 │
-├── Master_Quiz.py
-├── Python/
+├── Master_Quiz.py          # Main quiz engine
+├── Python/                 # Python questions
 │     └── questions.json
-│
-├── Java/
+├── Java/                   # Java questions
 │     └── questions.json
-│
-├── HTML/
+├── HTML/                   # HTML questions
 │     └── questions.json
-│
-└── Master test results/
-🧠 How it works
+└── Master test results/    # Saved quiz results
+⚙️ How It Works
 User selects a topic
 User selects difficulty
-User selects number of questions (25 / 50 / 100)
-Quiz runs in terminal
+User selects number of questions
+Questions are randomly selected (no repeats)
+Answers are validated against accepted formats
 Score is calculated
-Results are saved to a .txt file
-▶️ How to run
-Step 1
-
-Install Python (3.10+ recommended)
-
-Step 2
-
-Open terminal in project folder
-
-Step 3
-
-Run:
-
+Results are saved to a file
+▶️ Getting Started
+1. Install Python (3.10+ recommended)
+2. Navigate to project folder
+3. Run the program
 python Master_Quiz.py
 📦 Question Format (JSON)
-
-Each question looks like this:
-
 {
   "question": "What is 2 + 2?",
   "answer": ["4", "four"],
   "difficulty": "easy"
 }
-🧪 Example Output
+📊 Example Output
 Q1: What is 2 + 2?
 > 4
 ✅ Correct
 
 Q2: What is Python?
 > snake
-❌ Wrong
+❌ Incorrect
 📄 Results
 
-After each quiz, a report is saved automatically:
+After each session, results are saved automatically:
 
 Master test results/
    ├── Python/
    │     ├── easy/
-   │     │     └── result_2026-04-16.txt
+   │     │     └── result_YYYY-MM-DD.txt
 
-Includes:
+Each report includes:
 
-score
-wrong answers
-timestamp
-🎯 Goals of this project
-
-This project is built to:
-
-Practice Python fundamentals
-Learn file handling (JSON, TXT)
-Build a scalable quiz system
-Prepare for real software engineering projects
-🔧 Future Improvements
-GUI version (Tkinter or Web)
-Leaderboard system
-Timer per question
-Database storage
-User accounts
+Score
+Incorrect answers
+Timestamp
+🔭 Future Improvements
+Web-based interface (Flask or FastAPI)
+Progress visualization (charts, analytics)
+Adaptive difficulty system
+User profiles and persistent tracking
+💼 What This Project Demonstrates
+Writing modular, maintainable Python code
+Structuring scalable projects across multiple datasets
+Handling edge cases and input validation
+Designing systems with user learning in mind
 👨‍💻 Author
 
-Built by Taylor
-Learning software engineering step by step.
+Taylor
+Aspiring Software Engineer focused on building practical, real-world systems
