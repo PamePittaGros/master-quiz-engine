@@ -2,13 +2,43 @@
 <html>
 <body>
 
-<h2>Question {{ number }}</h2>
+{% if topics %}
+
+<h2>Choose Topic</h2>
+
+{% for t in topics %}
+    <p><b>{{ t }}</b></p>
+
+    <a href="/quiz/{{ t }}?num=10">10</a> |
+    <a href="/quiz/{{ t }}?num=25">25</a> |
+    <a href="/quiz/{{ t }}?num=50">50</a> |
+    <a href="/quiz/{{ t }}?num=100">100</a>
+
+    <br><br>
+{% endfor %}
+
+{% else %}
+
+<h2>Question {{ session.index + 1 }}</h2>
+
+<p>{{ question.question }}</p>
 
 <form method="POST">
-    <p>{{ question }}</p>
     <input name="answer" required>
     <button type="submit">Submit</button>
 </form>
+
+<p><b>{{ feedback }}</b></p>
+
+{% if show_retry %}
+    <form method="POST">
+        <button name="answer" value="{{ question.answer[0] }}">
+            Show Answer & Continue
+        </button>
+    </form>
+{% endif %}
+
+{% endif %}
 
 </body>
 </html>

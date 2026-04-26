@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Choose Topic</h2>
+
+{% for t in topics %}
+    <p><a href="/select/{{ t }}">{{ t }}</a></p>
+{% endfor %}
+
+</body>
+</html>
