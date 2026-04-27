@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body style="font-family: Arial; text-align: center;">
 
-<h2>Choose Topic</h2>
+<h1>Choose Topic</h1>
 
 {% for t in topics %}
-    <p><a href="/select/{{ t }}">{{ t }}</a></p>
+    <p>
+        <a href="/select/{{ t }}" style="font-size: 20px;">
+            {{ t }}
+        </a>
+    </p>
 {% endfor %}
 
 </body>
